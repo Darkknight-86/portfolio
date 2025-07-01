@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jubal Bewick - Resume | Full-Stack AI Engineer</title>
+    <meta name="description" content="Resume of Jubal Bewick - Graduate Computer Science student specializing in AI and full-stack development, seeking Summer 2025 internships.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            background: linear-gradient(135deg, #0D1117 0%, #161B22 100%); 
+            color: white; 
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .resume-header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+        }
+
+        .resume-header h1 { 
+            font-size: 3em; 
+            margin-bottom: 10px; 
+            background: linear-gradient(45deg, #F85D7F, #6366F1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .resume-header h2 { 
+            font-size: 1.5em; 
+            margin-bottom: 20px; 
+            color: #8B949E; 
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .contact-info a {
+            color: #58A6FF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #F85D7F;
+        }
+
+        .download-btn {
+            background: linear-gradient(45deg, #F85D7F, #6366F1);
+            padding: 12px 25px;
+            text-decoration: none;
+            color: white;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #58A6FF;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #F85D7F;
+        }
+
+        /* Resume Content */
+        .resume-content {
+            background: rgba(255,255,255,0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #F85D7F;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(248, 93, 127, 0.3);
+        }
+
+        .education-item, .experience-item, .project-item {
+            margin-bottom: 25px;
+        }
+
+        .education-item:last-child, .experience-item:last-child, .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-size: 1.2em;
+            color: #6366F1;
+            font-weight: 600;
+        }
+
+        .item-company {
+            color: #C9D1D9;
+            font-weight: 500;
+        }
+
+        .item-date {
+            color: #8B949E;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .item-description {
+            color: #C9D1D9;
+            margin-left: 0;
+        }
+
+        .item-description ul {
+            margin-left: 20px;
+        }
+
+        .item-description li {
+            margin-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .skill-category h4 {
+            color: #6366F1;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skill-list {
+            color: #C9D1D9;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 10px;
+            }
+            
+            .resume-header {
+                padding: 30px 20px;
+            }
+            
+            .resume-header h1 {
+                font-size: 2.2em;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .item-date {
+                margin-top: 5px;
+            }
+            
+            .back-link {
+                position: relative;
+                top: 0;
+                left: 0;
+                display: block;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .resume-header, .resume-content {
+                background: white;
+                border: none;
+                box-shadow: none;
+            }
+            
+            .download-btn, .back-link {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-link">← Back to Portfolio</a>
+    
+    <div class="container">
+        <!-- Resume Header -->
+        <div class="resume-header">
+            <h1>Jubal Bewick</h1>
+            <h2>Full-Stack AI Engineer</h2>
+            
+            <div class="contact-info">
+                <span>📍 Lexington, MA 02420</span>
+                <span>📞 (425) 361-9947</span>
+                <span>📧 <a href="mailto:bewick.j@northeastern.edu">bewick.j@northeastern.edu</a></span>
+                <span>💼 <a href="https://linkedin.com/in/jubalbewick" target="_blank">LinkedIn</a></span>
+                <span>🐙 <a href="https://github.com/darkknight-86" target="_blank">GitHub</a></span>
+                <span>🌐 <a href="https://jubalbewick.dev" target="_blank">Portfolio</a></span>
+            </div>
+            
+            <a href="/resume.pdf" target="_blank" class="download-btn">📥 Download PDF</a>
+        </div>
+
+        <!-- Resume Content -->
+        <div class="resume-content">
+            <!-- Summary -->
+            <div class="section">
+                <h3 class="section-title">Summary</h3>
+                <div class="item-description">
+                    <p>Aspiring Full Stack Engineer with a strong foundation in AI/ML applications and Large Language Model development. Demonstrated ability in building production-ready RAG systems and scalable AI platforms, with expertise in deploying LLM-based applications. Eager to leverage deep learning and NLP skills to contribute to innovative full stack solutions.</p>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="section">
+                <h3 class="section-title">Education & Certifications</h3>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Master of Science, Computer Science</div>
+                            <div class="item-company">Northeastern University, MA</div>
+                        </div>
+                        <div class="item-date">Expected May 2026</div>
+                    </div>
+                    <div class="item-description">
+                        <p><strong>GPA:</strong> 3.94</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Master of Science, Acupuncture & Oriental Medicine</div>
+                            <div class="item-company">Bastyr University</div>
+                        </div>
+                        <div class="item-date">2014</div>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Bachelor of Science, Natural Health Sciences</div>
+                            <div class="item-company">Bastyr University, WA</div>
+                        </div>
+                        <div class="item-date">2014</div>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Machine Learning Certification</div>
+                            <div class="item-company">UT Austin TACC Center</div>
+                        </div>
+                        <div class="item-date">2024</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI & NLP Projects -->
+            <div class="section">
+                <h3 class="section-title">AI & NLP Projects</h3>
+                
+                <div class="project-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Production RAG System & LLM Application Platform</div>
+                            <div class="item-company"><a href="https://rag-benchmarking-platform.onrender.com" target="_blank" style="color: #58A6FF;">Live Demo</a></div>
+                        </div>
+                        <div class="item-date">2024</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Engineered a scalable Retrieval-Augmented Generation platform using OpenAI GPT models, vector database (Clickhouse,FAISS), and FastAPI backend</li>
+                            <li>Implemented semantic similarity search, document embedding generation, and real-time performance benchmarking</li>
+                            <li>Deployed asynchronous application handling concurrent requests with comprehensive analytics dashboard and automated testing suite</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Large Language Model Integration & Optimization</div>
+                        </div>
+                        <div class="item-date">2024</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Developed full-stack applications integrating LLMs with document retrieval systems for question answering and content summarization</li>
+                            <li>Optimized embedding generation and vector search algorithms for real-time performance, supporting multiple document formats and complex query processing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Real-Time Data Processing Application</div>
+                            <div class="item-company"><a href="https://jubalbewick.dev#projects" target="_blank" style="color: #58A6FF;">Video Demo</a></div>
+                        </div>
+                        <div class="item-date">2024</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Designed Java application using MVC architecture with Alpha Vantage API integration for financial data processing</li>
+                            <li>Implemented GUI-based visualization with multiple data persistence options and real-time performance optimization for concurrent data streams</li>
+                            <li>Integrated comprehensive JUnit testing framework within TDD methodology, achieving full test coverage and automated GUI component testing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Advanced Unsupervised Learning for Data Reduction</div>
+                        </div>
+                        <div class="item-date">2024</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Engineered unsupervised learning algorithms for computational resource optimization in medical imaging and pattern recognition</li>
+                            <li>Implemented PCA, MDS, and t-SNE for dimensionality reduction with K-Means and DBSCAN clustering, achieving significant data compression while preserving critical feature information</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Convolutional Neural Networks for Computer Vision</div>
+                        </div>
+                        <div class="item-date">2024</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Developed CNN architectures using TensorFlow for environmental classification tasks, integrating data preprocessing pipelines</li>
+                            <li>Applied PCA for image compression and K-Means for color quantization, optimizing model performance while minimizing computational requirements for real-time applications</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Autonomous Systems & Computer Vision Integration</div>
+                        </div>
+                        <div class="item-date">2024</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Led development of autonomous drone platform for environmental monitoring, programming navigation algorithms in Python and C++ with OpenCV integration</li>
+                            <li>Currently integrating Google Vertex AI for automated plant analysis in greenhouse automation applications, focusing on end-to-end ML pipeline development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Skills -->
+            <div class="section">
+                <h3 class="section-title">Technical Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>AI & Machine Learning</h4>
+                        <div class="skill-list">OpenAI API, Claude API, Langchain, HuggingFace (transformers, LLMs), RAG Systems, Semantic Search, Vector Databases (Clickhouse, FAISS, Pinecone), TensorFlow, PyTorch</div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Programming & Deployment</h4>
+                        <div class="skill-list">Python, C++, Java, TypeScript, FastAPI, Docker, AWS/GCP/Azure, Real-time Optimization, Concurrent Processing</div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Data & Frameworks</h4>
+                        <div class="skill-list">NRDBs, RDBs, Node.js, Various DBs</div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Software Architecture</h4>
+                        <div class="skill-list">OOP, MVC, Microservices, API Design, Scalable Deployment, Documentation, Agile/Scrum</div>
+                    </div>
+                </div>
+            </div>
+        </div>
